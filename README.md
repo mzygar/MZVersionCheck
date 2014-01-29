@@ -12,7 +12,7 @@ Additionally, it can be used for test/enterprise distribution. If testing (or us
 
 ## Installation
 
-All you need to do is drop `MZVersionCheck` files into your project, and add `#include "MZVersionCheck.h"` to the top of classes that will use it.
+All you need to do is drop `MZVersionCheck` files into your project, and add `#include "MZVersionCheck.h"` to the top of classes that will use it. I will add CocoaPods support soon.
 
 ## Example Usage
 
