@@ -21,6 +21,8 @@
 		6E7C51AD1899202100D903C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7C518F1899202000D903C4 /* UIKit.framework */; };
 		6E7C51B51899202100D903C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C51B31899202100D903C4 /* InfoPlist.strings */; };
 		6E7C51B71899202100D903C4 /* MZVersionCheckTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C51B61899202100D903C4 /* MZVersionCheckTests.m */; };
+		6E7C51C31899217400D903C4 /* MZVersionCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C51C21899217400D903C4 /* MZVersionCheck.m */; };
+		6E7C51C41899217400D903C4 /* MZVersionCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C51C21899217400D903C4 /* MZVersionCheck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		6E7C51B21899202100D903C4 /* MZVersionCheckTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MZVersionCheckTests-Info.plist"; sourceTree = "<group>"; };
 		6E7C51B41899202100D903C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6E7C51B61899202100D903C4 /* MZVersionCheckTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZVersionCheckTests.m; sourceTree = "<group>"; };
+		6E7C51C11899217400D903C4 /* MZVersionCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MZVersionCheck.h; path = VersionCheck/MZVersionCheck.h; sourceTree = "<group>"; };
+		6E7C51C21899217400D903C4 /* MZVersionCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MZVersionCheck.m; path = VersionCheck/MZVersionCheck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		6E7C51911899202000D903C4 /* MZVersionCheck */ = {
 			isa = PBXGroup;
 			children = (
+				6E7C51C01899215700D903C4 /* VersionCheck */,
 				6E7C519A1899202000D903C4 /* MZAppDelegate.h */,
 				6E7C519B1899202000D903C4 /* MZAppDelegate.m */,
 				6E7C519D1899202000D903C4 /* Main.storyboard */,
@@ -150,6 +155,15 @@
 				6E7C51B31899202100D903C4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E7C51C01899215700D903C4 /* VersionCheck */ = {
+			isa = PBXGroup;
+			children = (
+				6E7C51C11899217400D903C4 /* MZVersionCheck.h */,
+				6E7C51C21899217400D903C4 /* MZVersionCheck.m */,
+			);
+			name = VersionCheck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +266,7 @@
 			files = (
 				6E7C51A21899202000D903C4 /* MZViewController.m in Sources */,
 				6E7C51981899202000D903C4 /* main.m in Sources */,
+				6E7C51C31899217400D903C4 /* MZVersionCheck.m in Sources */,
 				6E7C519C1899202000D903C4 /* MZAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7C51C41899217400D903C4 /* MZVersionCheck.m in Sources */,
 				6E7C51B71899202100D903C4 /* MZVersionCheckTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
