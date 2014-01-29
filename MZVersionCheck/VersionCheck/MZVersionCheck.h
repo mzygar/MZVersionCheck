@@ -18,4 +18,6 @@
 
 - (void)checkForNewVersion:( void (^)(BOOL isNewVersionAvailable, NSString *availableVersion) )completionBlock;
 - (void)checkForUpdates:( void (^)(NSString *remoteVersion, BOOL isNewVersionAvailable, NSString *applicationURL) )completionBlock;
+
+- (NSComparisonResult)compareVersion:(NSString *)source toVersion:(NSString *)target;
 @end
