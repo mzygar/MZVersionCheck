@@ -11,6 +11,9 @@
 
 @interface MZVersionCheck ()
 @property (nonatomic, strong) NSURL *enterprisePlistUrl;
+
+- (void)checkAppstoreVersion:( void (^)(NSString *appstoreVersion, BOOL isNewVersionAvailable, NSString *appstoreUrl) )completionBlock;
+- (void)checkPlistVersion:( void (^)(NSString *plistVersion, BOOL isNewVersionAvailable, NSString *applicationUrl) )completionBlock;
 @end
 
 
@@ -43,6 +46,7 @@
 {
     if (self.enterprisePlistUrl)
     {
+        [self checkPlistVersion:completionBlock];
     }
     else
     {
@@ -82,6 +86,28 @@
              completionBlock(version, isNewVersion, appstoreURL);
          }
      }];
+}
+
+- (void)checkPlistVersion:( void (^)(NSString *plistVersion, BOOL isNewVersionAvailable, NSString *applicationUrl) )completionBlock
+{
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfURL:self.enterprisePlistUrl];
+    if (!dict)
+    {
+        completionBlock(nil, NO, nil);
+        return;
+    }
+    NSArray *items = dict[@"items"];
+    NSDictionary *content = [items firstObject];
+    if (!content)
+    {
+        completionBlock(nil, NO, nil);
+        return;
+    }
+    NSDictionary *metadata = content[@"metadata"];
+    NSString *version = metadata[@"bundle-version"];
+    BOOL isNewVersion = [self compareVersion:self.currentVersion toVersion:version] == NSOrderedAscending;
+    NSString *enterpriseDownloadUrl = [@"itms-services://?action=download-manifest&url=" stringByAppendingString :[self.enterprisePlistUrl absoluteString]];
+    completionBlock(version, isNewVersion, enterpriseDownloadUrl);
 }
 
 - (NSComparisonResult)compareVersion:(NSString *)source toVersion:(NSString *)target

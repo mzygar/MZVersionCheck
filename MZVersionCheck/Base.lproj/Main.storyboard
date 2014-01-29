@@ -47,12 +47,23 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwy-k6-TYf">
+                                <rect key="frame" x="97" y="219" width="127" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Install new version">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="installNewVersion:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Z5d-um-nEe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="appVersion" destination="4bv-2k-YBr" id="hE3-Xi-Q3d"/>
                         <outlet property="availableVersion" destination="ZZY-lK-Ku2" id="I6q-2J-MTE"/>
+                        <outlet property="installUpdateButton" destination="Jwy-k6-TYf" id="60t-7U-jK0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
